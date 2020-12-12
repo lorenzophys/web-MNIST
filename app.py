@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from helpers.image_preprocessing import ImagePreprocessor
+from helpers.image_preprocessing import decode_image, reshape_image, prepare_image_for_evaluation
 from helpers.tensorflow_model import TensorflowModel
 
 
@@ -12,9 +12,9 @@ def home():
     if request.method == 'POST':
         image_url = request.values['imgBase64']
 
-        decoded_image = ImagePreprocessor.decode_image(image_url)
-        reshaped_image = ImagePreprocessor.reshape_image(decoded_image)
-        prepared_image = ImagePreprocessor.prepare_image_for_evaluation(reshaped_image)
+        decoded_image = decode_image(image_url)
+        reshaped_image = reshape_image(decoded_image)
+        prepared_image = prepare_image_for_evaluation(reshaped_image)
 
         prediction = model.predict(prepared_image)
 
