@@ -8,7 +8,11 @@ $('#evalButton').click(function() {
         url: '/',
         data: { imgBase64: imgURL },
         success: function(data) {
-            $('#prediction').text(data.prediction);
+            const predictionCanvas = document.getElementById('predictionCanvas');
+            const predictionCtx = predictionCanvas.getContext('2d');
+            predictionCtx.font = "60px Comic Sans MS";
+            predictionCtx.textAlign = "center";
+            predictionCtx.fillText(data.prediction, predictionCanvas.width/2, predictionCanvas.height/2);
         }
     });
 });

@@ -4,26 +4,29 @@ window.addEventListener('load', () => {
     canvas.addEventListener('mousemove', paint);
 });
 
-const clearButton = document.querySelector('#clearButton');
+const clearButton = document.getElementById('clearButton');
 
 clearButton.addEventListener('click', () => {
     const canvas = document.getElementById('canvas');
+    const predictionCanvas = document.getElementById('predictionCanvas');
     const ctx = canvas.getContext('2d');
-    let prediction = document.querySelector('#prediction');
+    const predictionCtx = predictionCanvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    prediction.textContent = '';
+    predictionCtx.clearRect(0, 0, predictionCanvas.width, predictionCanvas.height);
+
 });
 
 
-const canvas = document.querySelector('#canvas');
+const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-let brushCoordinates = {x:0 , y:0};
+let brushCoordinates = {x:0, y:0};
 let isPainting = false;
 
 function getPosition(event){
-    brushCoordinates.x = event.clientX - canvas.offsetLeft;
-    brushCoordinates.y = event.clientY - canvas.offsetTop;
+    let rect = canvas.getBoundingClientRect();
+    brushCoordinates.x = event.clientX - rect.left;
+    brushCoordinates.y = event.clientY - rect.top;
 }
 
 function startPainting(event){

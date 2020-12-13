@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, jsonify
+from flask_bootstrap import Bootstrap
 from helpers.image_preprocessing import decode_image, reshape_image, prepare_image_for_evaluation
 from helpers.tensorflow_model import TensorflowModel
 
 
 app = Flask(__name__)
+bootstrap = Bootstrap(app)
 model = TensorflowModel('./model/MNIST_digits_CNN_model.h5')
 
 
@@ -20,7 +22,7 @@ def home():
 
         return jsonify(prediction=str(prediction))
 
-    return render_template('index.html')
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
