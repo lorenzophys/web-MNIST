@@ -1,0 +1,44 @@
+{% extends 'routes/base.html' %}
+
+{% block title %}Web MNIST - Home{% endblock %}
+
+{% block page_header %}
+<h1>Halo! Welcome to Web-MNIST</h1>
+{% endblock page_header %}
+
+{% block page_content %}
+    <div class="row">
+        <h4 class="text-center">Draw a digit in the box and let the neural network evaluate it.</h4>
+        <div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center"><b>Draw here</b></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas id="canvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center"><b>Prediction</b></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <canvas id="predictionCanvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div>
+        <button id="evalButton" class="btn btn-lg btn-block btn-info">Evaluate</button>
+        <button id="clearButton" class="btn btn-lg btn-block btn-default">Clear</button>
+    </div>
+{% endblock page_content %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='jquery-3.5.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='canvas_handler.js') }}"></script>
+    <script src="{{ url_for('static', filename='eval_handler.js') }}"></script>
+{% endblock scripts %}
