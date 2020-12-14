@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="page-header">
+            {% block error_message %}{% endblock error_message %}
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                {% block error_text %}{% endblock error_text %}
+            </div>
+            <div class="col-sm-12 text-center">
+                {% block link_back %}{% endblock link_back %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

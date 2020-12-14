@@ -1,0 +1,14 @@
+{% extends "errors/error_base.html" %}
+
+{% block error_message %}
+    <h1>Page not found</h1>
+{% endblock error_message %}
+
+{% block error_text %}
+    <h2>Hey, you probably made a mistake typing the URL.</h2>
+    <h2>What you're looking for is not here.</h2>
+{% endblock error_text %}
+
+{% block link_back %}
+    <h3 class="text-center"><a href="/">Go to homepage</a></h3>
+{% endblock link_back %}

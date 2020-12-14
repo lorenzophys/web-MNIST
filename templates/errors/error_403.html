@@ -1,0 +1,14 @@
+{% extends "errors/error_base.html" %}
+
+{% block error_message %}
+    <h1>Forbidden</h1>
+{% endblock error_message %}
+
+{% block error_text %}
+    <h2>The server understood the request, but is refusing to authorize it.</h2>
+    <h2>You may be trying to access a forbidden resource.</h2>
+{% endblock error_text %}
+
+{% block link_back %}
+    <h3 class="text-center"><a href="/">Go to homepage</a></h3>
+{% endblock link_back %}

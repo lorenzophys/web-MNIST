@@ -1,0 +1,14 @@
+{% extends "errors/error_base.html" %}
+
+{% block error_message %}
+    <h1>Internal Server Error</h1>
+{% endblock error_message %}
+
+{% block error_text %}
+    <h2>The server encountered an internal error and was unable to complete your request.</h2>
+    <h2>Either the server is overloaded or there is an error in the application.</h2>
+{% endblock error_text %}
+
+{% block link_back %}
+    <h3 class="text-center"><a href="/">Go to homepage</a></h3>
+{% endblock link_back %}
