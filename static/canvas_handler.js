@@ -8,14 +8,14 @@ const clearButton = document.getElementById('clearButton');
 
 clearButton.addEventListener('click', () => {
     const canvas = document.getElementById('canvas');
-    const predictionCanvas = document.getElementById('predictionCanvas');
     const ctx = canvas.getContext('2d');
-    const predictionCtx = predictionCanvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const predictionCanvas = document.getElementById('predictionCanvas');
+    const predictionCtx = predictionCanvas.getContext('2d');
     predictionCtx.clearRect(0, 0, predictionCanvas.width, predictionCanvas.height);
 
 });
-
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
@@ -45,7 +45,7 @@ function paint(event){
 
     ctx.beginPath();
 
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 10;
     ctx.lineCap = 'round';
     ctx.strokeStyle = 'black';
 

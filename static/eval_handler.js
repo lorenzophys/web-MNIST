@@ -10,9 +10,9 @@ $('#evalButton').click(function() {
         success: function(data) {
             const predictionCanvas = document.getElementById('predictionCanvas');
             const predictionCtx = predictionCanvas.getContext('2d');
-            predictionCtx.font = "60px Comic Sans MS";
+            predictionCtx.font = "220px Arial";
             predictionCtx.textAlign = "center";
-            predictionCtx.fillText(data.prediction, predictionCanvas.width/2, predictionCanvas.height/2);
+            predictionCtx.fillText(data.prediction, predictionCanvas.width/2, 3*predictionCanvas.height/4);
         }
     });
 });
