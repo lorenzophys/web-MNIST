@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_bootstrap import Bootstrap
 from helpers.image_preprocessing import ImageProcessor
 from helpers.tensorflow_model import TensorflowModel
+import os
 
 
 app = Flask(__name__)
@@ -22,6 +23,11 @@ def home():
         return jsonify(prediction=str(prediction))
 
     return render_template('routes/home.html')
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico')
 
 
 @app.errorhandler(404)

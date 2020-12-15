@@ -1,5 +1,10 @@
 {% extends "bootstrap/base.html" %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock head %}
+
 {% block navbar %}
     <nav class="navbar navbar-default" role="navigation" style="background-image: linear-gradient(to bottom,#d9edf7 0,#b9def0 100%)">
         <div class="container">
