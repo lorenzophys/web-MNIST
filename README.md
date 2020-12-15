@@ -30,7 +30,7 @@ model = keras.Sequential(
 The model was compiled with these parameters:
 
 ```
-compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 ```
 Data augmentation was used:
 
