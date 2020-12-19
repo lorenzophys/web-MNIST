@@ -6,7 +6,7 @@ A digit recognizer web app made using flask and tensorflow.keras.
 ### Architecture used
 
 The model for prediction was built with tensorflow.keras.
-The neural network was trained with the [MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/)
+The neural network was trained on the [MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/)
 with the following architecture:
 ```
 model = keras.Sequential(
@@ -32,7 +32,7 @@ The model was compiled with these parameters:
 ```
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 ```
-Data augmentation was used:
+and data augmentation was used:
 
 ```
 datagen = ImageDataGenerator(rotation_range=10,
