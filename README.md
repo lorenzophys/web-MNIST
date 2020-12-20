@@ -1,12 +1,13 @@
 # Web-MNIST
-A digit recognizer web app made using flask and tensorflow.keras.
+A digit recognizer web app made using flask and tensorflow.keras. 
+[Here](https://github.com/lorenzophys/django-web-MNIST) a version of the same app using django.
 
 ![preview](./static/preview.png)
 
 ### Architecture used
 
 The model for prediction was built with tensorflow.keras.
-The neural network was trained with the [MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/)
+The neural network was trained on the [MNIST database of handwritten digits](http://yann.lecun.com/exdb/mnist/)
 with the following architecture:
 ```
 model = keras.Sequential(
