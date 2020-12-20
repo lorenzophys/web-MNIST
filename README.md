@@ -33,7 +33,7 @@ The model was compiled with these parameters:
 ```
 model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
 ```
-Data augmentation was used:
+and data augmentation was used:
 
 ```
 datagen = ImageDataGenerator(rotation_range=10,
